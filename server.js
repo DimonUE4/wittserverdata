@@ -7,6 +7,13 @@ const multer = require('multer')
 
 const app = express();
 
+const app = express();
+const cors = require('cors');
+app.use(cors({
+    origin: '*', // или точный адрес твоего клиента
+    credentials: true
+}));
+
 // Middleware для парсинга данных формы
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
