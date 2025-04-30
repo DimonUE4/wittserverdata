@@ -23,15 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Роуты для статических страниц
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'register.html'));
+    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Register.html'));
 });
 app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Profile.html'));
+    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Profile.html'));
 });
 
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Register.html'));
+    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Register.html'));
 });
 
 app.get('/buy', (req, res) => {
@@ -44,7 +44,7 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'aboutus.html'));
 });
 app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/dashboard.html'));
 });
 
 app.get('/user-info', (req, res) => {
