@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const multer = require('multer')
 
-const app = express();
 
+
+const app = express();
 const cors = require('cors');
 app.use(cors({
     origin: '*', // или точный адрес твоего клиента
@@ -24,33 +25,32 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Указываем папку для статических файлов (HTML, CSS)
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Роуты для статических страниц
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Register.html'));
+     res.redirect('https://https://whateverittakesteam.ru/Register.html');
 });
 app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Profile.html'));
+    res.redirect('https://https://whateverittakesteam.ru/Profile.html');
 });
 
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/Register.html'));
+    res.redirect('https://https://whateverittakesteam.ru/Register.html');
 });
 
 app.get('/buy', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'buy.html'));
+    res.redirect('https://https://whateverittakesteam.ru/buy.html');
 });
 app.get('/payment', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'payment.html'));
+    res.redirect('https://https://whateverittakesteam.ru/payment.html');
 });
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'aboutus.html'));
+    res.redirect('https://https://whateverittakesteam.ru/aboutus.html');
 });
 app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, 'https://https://whateverittakesteam.ru/dashboard.html'));
+    res.redirect('https://https://whateverittakesteam.ru/dashboard.html');
 });
 
 app.get('/user-info', (req, res) => {
