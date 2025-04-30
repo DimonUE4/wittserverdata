@@ -1,0 +1,36 @@
+[
+   {
+      "username": "Dima[Admin]",
+      "password": "System64@",
+      "email": "admin@example.com",
+      "role": "Admin"
+   },
+   {
+      "username": "Dima",
+      "password": "System32@",
+      "email": "user@example.com",
+      "role": "User"
+   },
+   {
+      "username": "daun",
+      "password": "System32@",
+      "email": "jkakto@gmail.com"
+   },
+   {
+      "username": "Lev[Admin]",
+      "password": "System32@",
+      "email": "levv066levv@gmail.com",
+      "role": "Admin"
+   },
+   {
+      "username": "Andrew[Admin]",
+      "password": "System32@",
+      "email": "user@example.com",
+      "role": "Admin"
+   },
+   {
+      "username": "Ivan",
+      "password": "System64@",
+      "email": "dimasys1666@gmail.com"
+   }
+]
