@@ -129,6 +129,7 @@ app.post('/login', (req, res) => {
             if (user) {
                 req.session.username = user.username;
                 req.session.role = user.role;
+                req.session.loggedIn = true;
 
                 console.log(`Роль пользователя ${user.username}: ${user.role}`);
 
