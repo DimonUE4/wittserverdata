@@ -284,11 +284,12 @@ app.post('/add-news', upload.single('image'), (req, res) => {
 
 app.get('/check-session', (req, res) => {
     if (req.session.username) {
-        res.json({ loggedIn: true });
+        res.json({ loggedIn: true, username: req.session.username, role: req.session.role });
     } else {
         res.json({ loggedIn: false });
     }
 });
+
 app.get('/public/WhateverItTakesLauncher.zip', (req, res) => {
     const file = path.join(__dirname, 'WhateverItTakesLauncher.zip');
     res.download(file);  // Это инициирует загрузку файла
