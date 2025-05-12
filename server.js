@@ -290,7 +290,7 @@ app.post('/add-news', upload.single('image'), (req, res) => {
         // Запись в файл
         fs.writeFile('news.json', JSON.stringify(news, null, 2), (err) => {
             if (err) return res.status(500).send('Ошибка записи новости');
-            res.status(200).send('Новость добавлена');
+            res.status(200).json({ message: 'Новость добавлена' });
         });
     });
 });
