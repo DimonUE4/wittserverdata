@@ -13,6 +13,12 @@ app.use(cors({
     origin: 'https://whateverittakesteam.ru',
     credentials: true
 }));
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+// Убедимся, что папка для хранения изображений существует
+const uploadsDir = path.join(__dirname, '/uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 // Middleware для парсинга данных формы
 app.use(bodyParser.urlencoded({ extended: true }));
