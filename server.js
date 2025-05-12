@@ -15,7 +15,7 @@ app.use(cors({
 }));
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 // Убедимся, что папка для хранения изображений существует
-const uploadsDir = path.join(__dirname, '/uploads');
+const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
 }
@@ -236,7 +236,7 @@ app.get('/logout', (req, res) => {
 
 // Настройка хранения изображений
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, '/uploads'),
+    destination: (req, file, cb) => cb(null, 'uploads'),
     filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
 });
 const upload = multer({ storage });
