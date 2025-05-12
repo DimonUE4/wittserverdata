@@ -268,15 +268,20 @@ app.get('/news', (req, res) => {
 // Добавление новости
 app.post('/add-news', upload.single('image'), (req, res) => {
     const { title, content } = req.body;
-    const imagePath = req.file ? `/uploads/${req.file.filename}` : '';
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : ''; // Путь для клиента
 
+    // Чтение существующих новостей
     fs.readFile('news.json', 'utf8', (err, data) => {
         let news = [];
-        if (!err && data) news = JSON.parse(data);
+        if (!err && data) news = JSON.parse(data); // Если новости уже есть, загружаем их
 
+        // Создание новой записи
         const newEntry = { title, content, image: imagePath };
-        news.unshift(newEntry); // Добавляем новость первой
 
+        // Добавляем новость в начало списка
+        news.unshift(newEntry);
+
+        // Запись в файл
         fs.writeFile('news.json', JSON.stringify(news, null, 2), (err) => {
             if (err) return res.status(500).send('Ошибка записи новости');
             res.status(200).send('Новость добавлена');
