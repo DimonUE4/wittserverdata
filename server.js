@@ -237,7 +237,7 @@ app.get('/logout', (req, res) => {
 // Настройка хранения изображений
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads'),
-    filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+    filename: (req, file, cb) => cb(null, file.originalname) // сохраняем оригинальное имя
 });
 const upload = multer({ storage });
 
