@@ -13,7 +13,7 @@ app.use(cors({
     origin: 'https://whateverittakesteam.ru',
     credentials: true
 }));
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 // Убедимся, что папка для хранения изображений существует
 const uploadsDir = path.join(__dirname, '/uploads');
 if (!fs.existsSync(uploadsDir)) {
