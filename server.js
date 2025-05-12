@@ -10,7 +10,7 @@ const multer = require('multer')
 const app = express();
 const cors = require('cors');
 app.use(cors({
-    origin: '*', // или точный адрес твоего клиента
+    origin: 'https://whateverittakesteam.ru',
     credentials: true
 }));
 
