@@ -18,11 +18,16 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Middleware для сессий
 app.use(session({
-    secret: 'secret-key', // Секретный ключ для сессий
+    secret: 'yourSecretKey',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: {
+        secure: true,            // если HTTPS (на проде обязательно)
+        httpOnly: true,
+        sameSite: 'none',        // важно для CORS
+        maxAge: 24 * 60 * 60 * 1000 // 1 день
+    }
 }));
 
 
