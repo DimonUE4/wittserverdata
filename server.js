@@ -218,9 +218,10 @@ app.get('/logout', (req, res) => {
         if (err) {
             return res.status(500).send('Ошибка при выходе');
         }
-        res.redirect('/login');
+        res.json({ success: true }); // клиент сам решит, куда редиректить
     });
 });
+
 
 // Настройка хранения изображений
 const storage = multer.diskStorage({
